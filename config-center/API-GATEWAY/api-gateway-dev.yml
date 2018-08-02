@@ -1,0 +1,49 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: api-gateway
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    appname: api-gateway
+    lease-expiration-duration-in-seconds: 5
+    lease-renewal-interval-in-seconds: 10
+  client:
+    register-with-eureka: true
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:7777/eureka/,http://${eureka.instance.hostname}:8888/eureka/
+
+#模版配置
+  thymeleaf:
+    cache: false
+    encoding: utf-8
+    prefix: classpath:/static/templates
+    mode: HTML5
+    suffix: .html
+    servlet:
+      content-type: text/html
+    check-template: false
+
+#zuul config
+zuul:
+  routes:
+    api-student:
+      path: /api/student/**
+      #url: http://www.baidu.com
+      serviceId: STUDENT
+    api-teacher:
+      path: /api/teacher/**
+      serviceId: TEACHER
+
+service:
+  student:
+    app:
+      name: STUDENT
+
+#logbook.write.level=info
+#logbook.format.style=http
+#logbook.filter.enabled=false
