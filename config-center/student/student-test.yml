@@ -5,9 +5,6 @@ server:
   servlet:
     session:
       timeout: 60ms
-spring:
-  application:
-    name: student
   #数据库连接配置durid
   datasource:
     druid:
@@ -79,18 +76,6 @@ spring:
 mybatis:
   mapperLocations: classpath*:database/mapper/*.xml
   type-aliases-package: com.student.mapper
-
- #eureka配置(服务提供者)
-eureka:
-  instance:
-    appname: student
-    lease-renewal-interval-in-seconds: 10
-    lease-expiration-duration-in-seconds: 5
-  client:
-    service-url:
-      defaultZone: http://127.0.0.1:7777/eureka/,http://127.0.0.1:8888/eureka/
-    healthcheck:
-      enabled: true
 
 
 
