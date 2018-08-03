@@ -5,6 +5,7 @@ server:
   servlet:
     session:
       timeout: 60ms
+spring:
   #数据库连接配置durid
   datasource:
     druid:
