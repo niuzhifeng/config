@@ -79,6 +79,10 @@ mybatis:
   mapperLocations: classpath*:database/mapper/*.xml
   type-aliases-package: com.student.mapper
 
+logger:
+  com.student.mapper:DEBUG
+  
+
  
 
 
