@@ -77,6 +77,11 @@ spring:
 mybatis:
   mapperLocations: classpath*:database/mapper/*.xml
   type-aliases-package: com.student.mapper
+  
+logging:
+  level:
+    com.student.mapper: DEBUG  
+  
 
 
 
