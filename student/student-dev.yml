@@ -59,6 +59,10 @@ spring:
       # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
       useGlobalDataSourceStat: true
+  #kafka配置
+  kafka:
+    producer:
+      bootstrap-servers: nzf01:9092,nzf02:9092,nzf03:9092      
   #redis配置
   redis:
     host: 127.0.0.1
